@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% if result == 'Not at all' %}
+    <div class="jumbotron jumbotron-fluid bg-success">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">No Depression</h1>
+            <p class="lead">You are free from depression.</p>
+        </div>
+    </div>
+    <img
+              src="{{ url_for('static',filename='how-to-be-happy.jpg') }}"
+              class="card-img-top"
+              alt="..."
+
+              width="100"
+              height="500"
+            />
+    <h1>Good Job! You seem to be managing well. You may be experiencing a very slight amount of anxiety which is normal.
+        Is something else bothering you? Maybe you want to learn more about anxiety?</h1>
+       
+    {% elif result == 'Moderately' %} 
+    
+
+    <div class="jumbotron jumbotron-fluid bg-warning">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Mild Depression</h1>
+            <p class="lead">You are suffering from Mild depression.</p>
+        </div>
+    </div>
+    <div class="container">
+        <a href="/"><button class="btn btn-outline-primary">Home page</button></a>
+        <a href="/diseasesurvey"><button class="btn btn-outline-primary">Disease Prediction Test</button></a>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Get plenty of sleep</h5>
+                    <p class="card-text">Sleep is really important for our physical and mental health. Sleep helps to regulate the chemicals in our brain that transmit information. These chemicals are important in managing our moods and emotions. If we don't get enough sleep, we can start to feel depressed or anxious.</p>
+                </div>
+            </div>
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Eat well</h5>
+                    <p class="card-text">Eating well isn't just important for our bodies, but it's also important for our minds. Certain mineral deficiencies, such as iron and vitamin B12 deficiencies, can give us a low mood. Try to eat a balanced diet. If you find you're a particularly stressed or anxious person, you should try limiting or cutting out caffeine as this can make you feel jittery and anxious.</p>
+                </div>
+            </div>
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Avoid alcohol, smoking and drugs</h5>
+                    <p class="card-text">Drinking and smoking aren't things which we always associate with withdrawal symptoms, but they can cause some which impact on your mental health. When you've had a few drinks you can feel more depressed and anxious the next day, and it can be harder to concentrate. </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Get plenty of sunlight</h5>
+                    <p class="card-text">Sunlight is a great source of vitamin D. Vitamin D is a really important vitamin for our bodies and our brains. It helps our brains to release chemicals which improve our mood, like endorphins and serotonin. Try to go out in the sun when you can, but make sure you keep your skin and eyes safe. </p>
+                </div>
+            </div>
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Manage stress</h5>
+                    <p class="card-text">Stress is often unavoidable, but knowing what triggers your stress and knowing how to cope is key in maintaining good mental health. Try to manage your responsibilities and worries by making a list or a schedule of when you can resolve each issue.</p>
+                </div>
+            </div>
+            <div class="card col-md-4" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Activity and exercise</h5>
+                    <p class="card-text">Activity and exercise are essential in maintaining good mental health. Being active not only gives you a sense of achievement, but it boosts the chemicals in your brain that help put you in a good mood. Exercising can help eliminate low mood, anxiety, stress and feeling tired and lazy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="jumbotron jumbotron-fluid bg-danger">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">Severely</h1>
+            
+        </div>
+    </div>
+    
+    <div>
+        <center><h1> <p style="font-size:50px" class="lead"> Your mental state is slightly higher than normal. We request you to take a desiease predictiont test </p> </h1></center>
+       
+    </div>
+    <br>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <center><a href="/"><button class="btn btn-outline-primary">Home page</button></a></center>
+        
+        <center><a href="/diseasesurvey"><button class="btn btn-outline-primary">Disease Prediction Test</button></a></center>
+    </div>
+    {% endif %}
+
+    
+</body>
+</html>

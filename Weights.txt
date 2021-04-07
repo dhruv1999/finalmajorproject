@@ -1,0 +1,38 @@
+Age < 15 : 0
+Age > 15 and Age <= 35 : 2
+Age > 35 : 1
+
+Gender - "Male":2, "Female":0, "Other":1
+
+Self Employement - "Yes":0, "No":1
+
+Family Mental Disorder - "Yes":2, "Don't Know":1, "No":0
+
+Health In Past - "Yes":1, "No":0
+
+Work From Home - "Yes":1, "No":2, "Sometimes":0
+
+Long Working Hours - "Yes":2, "No":0, "Kind off":1
+
+Work Recognition - "Yes":0, "No":2, "Sometimes":1
+
+Culture - "Good":0, "Bad":2, "Mixed":1
+
+Employer Help with mental issues - "Yes":0, "No":2, "Sometimes":1
+
+Technical Development - "Yes":0, "No":2, "May be":1
+
+
+if total_weight <= 8
+    No depression
+
+if total_weight > 8 and total_weight <= 15
+    Mild
+
+else
+    Serious Depression
+
+
+
+
+    

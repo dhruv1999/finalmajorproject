@@ -1,0 +1,384 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style1.css') }}">
+    </head>
+   <body>
+    <div class="container">
+
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename='b.jpg') }}" width="80" height="80" class="d-inline-block align-top" alt="">  
+                </a>
+                <h1 class="text-info text-center">Screening Test</h1>
+            </nav>
+        <form method="POST" action='/diseasesurvey'>
+
+        
+            <br>
+            <fieldset id="group1" class="row">
+                <nav aria-label="breadcrumb" class="topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">At times I am MUCH more talkative or speak MUCH faster than usual.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+                <br>
+            </fieldset>
+            
+            <fieldset id="group2" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">There have been times when I was MUCH more active or did MANY more things than usual.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group3" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">There have been times when I have felt both high (elated) and low (depressed) AT THE SAME TIME.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group4" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">My self-confidence ranges from GREAT self-doubt to EQUALLY GREAT overconfidence.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group5" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">There have been GREAT variations in the quantity or quality of my work.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group6" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">FOR NO OBVIOUS REASON I sometimes have been VERY angry or hostile.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group7" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Sometimes I am mentally dull and at other times I think VERY creatively.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group8" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Some of the time I show MUCH tearfulness and crying and at other times I laugh and joke EXCESSIVELY.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group9" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">You are so easily distracted by things around you that you have trouble concentrating or staying on track?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+                <fieldset id="group10" class="row">
+                    <nav aria-label="breadcrumb" class="question topMargin">
+                        <ol class="breadcrumb question">
+                            <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">..you were much more social or outgoing than usual, for example, you " "telephoned friends in the middle of the night?</li>
+                        </ol>
+                    </nav>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Not at all" checked>
+                        <label class="form-check-label">
+                            Not at all
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Moderately" checked>
+                        <label class="form-check-label">
+                            Moderately 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Severely" checked>
+                        <label class="form-check-label">
+                            Severely
+                        </label>
+                    </div>
+                </fieldset>
+                <br>
+
+            <fieldset id="group11" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">you felt so good or so hyper that other people thought you were not your " "normal self or you were so hyper that you got into trouble?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+                
+            </fieldset>
+
+            <fieldset id="group12" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Have you had an anxiety attack? Fatigue or Vomiting , when you get nervous</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group12" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group12" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group12" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+
+                    </br>
+            <fieldset id="group13" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Thoughts that you would be better off dead or of hurting yourself in some way?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group13" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group13" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group13" value="Severely" checked>
+                    <label class="form-check-label">
+                       Severely
+                    </label>
+                </div>
+                <div>
+                    <br>
+                    <input class="btn btn-warning" type="submit">
+                </div>
+            </fieldset>
+
+                <br>
+        </form>
+    </div>
+   </body>
+</html>

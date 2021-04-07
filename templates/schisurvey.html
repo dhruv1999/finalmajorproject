@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style1.css') }}">
+    </head>
+   <body>
+    <div class="container">
+
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename='b.jpg') }}" width="80" height="80" class="d-inline-block align-top" alt="">  
+                </a>
+                <h1 class="text-info text-center">Screening Test</h1>
+            </nav>
+        <form method="POST" action='/schisurvey'>
+
+        
+            <br>
+            <fieldset id="group1" class="row">
+                <nav aria-label="breadcrumb" class="topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I believe that others control what I think and feel.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+                <br>
+            </fieldset>
+            
+            <fieldset id="group2" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I hear or see things that others do not hear or see</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group3" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I feel it is very difficult for me to express myself in words that others can understand</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group4" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Do you ever hear or see things that others cannot?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group5" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Do you struggle to trust that what you are thinking is real?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group6" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Do you find it difficult to organize or keep track of your thinking?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group7" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Do you feel that you are being tracked, followed, or watched at home or outside?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group8" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I am treated unfairly because others are jealous of my special abilities</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group9" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I talk to another person or other people inside my head that nobody else can hear</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+                <fieldset id="group10" class="row">
+                    <nav aria-label="breadcrumb" class="question topMargin">
+                        <ol class="breadcrumb question">
+                            <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I have trouble speaking the words I want to say, or I am able to speak but other people have told me that what I say is incoherent.</li>
+                        </ol>
+                    </nav>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Not at all" checked>
+                        <label class="form-check-label">
+                            Not at all
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Moderately" checked>
+                        <label class="form-check-label">
+                            Moderately 
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="group10" value="Severely" checked>
+                        <label class="form-check-label">
+                            Severely
+                        </label>
+                    </div>
+                </fieldset>
+                <br>
+
+            <fieldset id="group11" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">I have been diagnosed with a medical condition which I have been advised may affect my mood or behaviour</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Not at all" checked>
+                    <label class="form-check-label">
+                        Not at all
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Moderately" checked>
+                    <label class="form-check-label">
+                        Moderately
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Severely" checked>
+                    <label class="form-check-label">
+                        Severely
+                    </label>
+                </div>
+                
+            </fieldset>
+
+            <fieldset id="group12" class="row">
+              
+                    <input class="btn btn-warning" type="submit">
+                </div>
+            </fieldset>
+
+                <br>
+        </form>
+    </div>
+   </body>
+</html>

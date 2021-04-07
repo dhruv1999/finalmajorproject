@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBUn4VV7RzbmmupshD8Fh1ZLaXI12q4Ch0"></script>
+
+
+        <style type="text/css">
+
+        #map { width: 400px;
+ 		height: 400px;
+         
+         }   
+        </style>       
+      
+        <script type="text/javascript">
+        
+            x = navigator.geolocation;
+        
+            x.getCurrentPosition(success, failure);
+        
+            function success(position)
+            {
+                var myLat = position.coords.latitude;
+                var myLong = position.coords.longitude;
+        
+                var coords = new google.maps.LatLng(myLat, myLong);
+                
+                var mapOptions = {
+        
+                    zoom: 12,
+                    center: coords,
+                   
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+        
+                }
+                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        
+                var marker = new google.maps.Marker({map:map, position: coords});
+            
+            }
+        
+            function failure()
+            {
+                
+            }
+        
+        </script>
+    </head>
+<body >
+
+    {% if result == 'No bipolar' %}
+    <div class="jumbotron jumbotron-fluid bg-success">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">No Bipolar</h1>
+            <p class="lead">You are free from bipolar.</p>
+            
+        </div>
+    </div>
+    <p>
+        
+        <div class="container">
+            <div class="row">
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Connected</h5>
+                        <p class="card-text">Stay Connected – The more you isolate yourself, the more you increase the risk of mood changes going unnoticed and jeopardizing your health. Lack of connection to others can also put you at risk for a depressive episode. So don’t hesitate to assemble of team of professionals to provide guidance and insight. Doctors, counselors, and others can be a part of your support system, and many people find that attending a support group for people with bipolar disorder can be invaluable. Staying engaged with friends, family, and members of your community can also play an important role in keeping you energized and providing support. </p>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">See a doctor</h5>
+                        <p class="card-text">Education starts with learning the symptoms of manic and depressive episodes and getting up-to-date on research-driven treatment options for bipolar disorder. Share your questions and concerns with your doctor or psychiatrist, and ask them what resources they recommend for you to read or gather. Understanding the illness can help it feel more manageable and assist you in identifying symptoms before they get worse.</p>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Make Notes</h5>
+                        <p class="card-text">Many people with bipolar disorder find it useful to keep a daily log of their mood, thinking, and behaviors. If you are able to catch small changes in these arenas, then you may be able to stop or decrease the intensity of a mood episode before it worsens. You should can also track stressors or behaviors which may trigger a mood episode, such as lack of sleep, relationship conflict, school or work stress, substance use, or seasonal changes. The more accurately you can report these changes to yourself and your doctor, the greater chance of stabilizing your mood.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">New hobies</h5>
+                        <p class="card-text">In addition to alerting your counselor or doctor, you can utilize coping skills to control symptoms or reduce your risk for a mood episode. Different coping techniques work for different people, but they typically involve activities that help you feel calm, stay connected to others, practice healthy habits, and engage interests. Having a list of coping skills available to you can be useful, as it might prove difficult to generate your own ideas when you feel a lack of control. </p>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Stay Busy</h5>
+                        <p class="card-text">Perhaps the greatest coping skill for preventing mania or depression is the establishment of a healthy, daily routine. You should be taking medication consistently and accurately. Getting consistent and sufficient sleep every night can reduce the risk of mania.2 Getting healthy and exercising can help improve and stabilize your mood as well. Schedule regular times to dedicate to family and friends, attend all doctor’s appointments, and carve out time to relax and unwind from life’s stressors. </p>
+                    </div>
+                </div>
+                <div class="card col-md-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Activity and exercise</h5>
+                        <p class="card-text">There are times when even the best routine and set of coping skills may fail to prevent a mood episode from escalating. It’s important, even while you’re feeling good, to go ahead and develop a crisis plan you can activate when you feel out of control. Create a written plan with a list of people that you or others can contact in emergency as well as information about your medications and warning signs and symptoms. Also, include a list hotline numbers that you can call if you experience suicidal thoughts or psychotic symptoms. Finally, leave a reminder to yourself that you can always call 911, walk into an emergency room, or ask a loved one to get you help if other measures fail.
+                            If you’re not sure where to start, mental health professionals are trained to help you develop a treatment plan that can engage all of these actions steps. Having a concrete plan can help you feel more in control of your bipolar disorder, and over time you can tailor or alter this plan as needed. Bipolar disorder doesn’t have to be a lonely experience, so think about who you can recruit today to help you build up resilience and thrive in all arenas of life.</p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    
+    
+    </p>
+    {% else %}
+    
+  <h1>hi</h1>
+  <h3>My Google Maps Demo</h3>
+  <!--The div element for the map -->
+  <div id="map"></div>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  
+    {% endif %}
+    <div id="map"> </div>
+    
+
+</body>
+</html>
