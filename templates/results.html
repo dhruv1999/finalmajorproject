@@ -9,38 +9,66 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <style>
+            .relative {
+                padding: 10px;
+                position: relative;
+                justify-content: center;
+                
+                margin: 10px;
+            }
+            #bipolar {
+                left:100px;
+            }
+            #home {
+                left:150px;
+            }
+            #schizo {
+                left:200px;
+            }
+            #img {
+                width: 100%;
+                height: auto;
+            }
+            
+           
+        </style>
 </head>
 <body>
     {% if result == 'Not at all' %}
     <div class="jumbotron jumbotron-fluid bg-success">
         <div class="container">
-            <h1 class="display-4 font-weight-bold">No Depression</h1>
-            <p class="lead">You are free from depression.</p>
+            <h1 class="display-4 font-weight-bold">No sign of Mental Illness</h1>
+            <p class="lead">Your mental state is Normal.</p>
         </div>
     </div>
+    <div id="img" style="width: 100%">
     <img
               src="{{ url_for('static',filename='how-to-be-happy.jpg') }}"
               class="card-img-top"
+            
               alt="..."
 
-              width="100"
-              height="500"
+              
             />
-    <h1>Good Job! You seem to be managing well. You may be experiencing a very slight amount of anxiety which is normal.
-        Is something else bothering you? Maybe you want to learn more about anxiety?</h1>
+    </div>
+    
+    <h4>Good Job! You seem to be managing well. You may be experiencing a very slight amount of anxiety which is normal.
+        Is something else bothering you? Maybe you want to learn more about anxiety?</h4>
        
     {% elif result == 'Moderately' %} 
     
 
     <div class="jumbotron jumbotron-fluid bg-warning">
         <div class="container">
-            <h1 class="display-4 font-weight-bold">Mild Depression</h1>
-            <p class="lead">You are suffering from Mild depression.</p>
+            <h1 class="display-4 font-weight-bold">Mild</h1>
+            <p class="lead">Your mental state is slightly higher than normal. .</p>
         </div>
     </div>
     <div class="container">
         <a href="/"><button class="btn btn-outline-primary">Home page</button></a>
         <a href="/diseasesurvey"><button class="btn btn-outline-primary">Disease Prediction Test</button></a>
+        <a href="/"></a>
     </div>
 
     <br>
@@ -97,7 +125,7 @@
     </div>
     
     <div>
-        <center><h1> <p style="font-size:50px" class="lead"> Your mental state is slightly higher than normal. We request you to take a desiease predictiont test </p> </h1></center>
+        <center><h1> <p style="font-size:50px" class="lead"> Your mental state is higher than normal. We request you to take a disease prediction test </p> </h1></center>
        
     </div>
     <br>
@@ -107,10 +135,11 @@
     <br>
     <br>
     <br>
-    <div>
-        <center><a href="/"><button class="btn btn-outline-primary">Home page</button></a></center>
+    <div class="relative">
+        <a href="/diseasesurvey"><button id="bipolar" class="btn btn-outline-primary">Bipolar Prediction Test</button></a>
         
-        <center><a href="/diseasesurvey"><button class="btn btn-outline-primary">Disease Prediction Test</button></a></center>
+        <a href="/"><button id="home" class="btn btn-outline-primary">Home Page</button></a>
+        <a href="/schisurvey"><button id="schizo" class="btn btn-outline-primary">Schizophrenia Prediction Test</button></a>
     </div>
     {% endif %}
 
