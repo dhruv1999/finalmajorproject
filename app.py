@@ -303,7 +303,7 @@ def schisurvey():
         result = think + head + express + see + trust + oraganize + \
             tracked + jealous + head + speaking + medical
 
-        dict1 = {0: "No schi", 1: "schi"}
+        dict1 = {0: "No schizophrenia", 1: "schizophrenia"}
         if result < 12:
             result = 0
 
