@@ -4,7 +4,7 @@ import settings
 
 a = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype='int')
 
-# comment
+# new comment
 
 
 def makePrediction2(a):
