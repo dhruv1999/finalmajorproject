@@ -1,48 +1,49 @@
-import pandas as pd
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 import numpy as np
-import settings
-
-a = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype='int')
-
-
-def makePrediction(a):
-
-    mental_health_train = pd.read_csv("major.csv")
-
-    from sklearn.model_selection import train_test_split
-    from sklearn import preprocessing
-    from sklearn.datasets import make_classification
-    from sklearn.preprocessing import binarize, LabelEncoder, MinMaxScaler
-
-    from sklearn.tree import DecisionTreeClassifier
-
-    from sklearn import metrics
-    from sklearn.metrics import accuracy_score, mean_squared_error, precision_recall_curve
-    from sklearn.model_selection import cross_val_score
-
-    mental_health_train.drop('Timestamp', axis=1, inplace=True)
-    mental_health_train.drop('Age', axis=1, inplace=True)
-    mental_health_train.shape
-
-    labelDict = {}
-    for feature in mental_health_train:
-        le = preprocessing.LabelEncoder()
-        le.fit(mental_health_train[feature])
-        le_name_mapping = dict(zip(le.classes_, le.transform(le.classes_)))
-        mental_health_train[feature] = le.transform(
-            mental_health_train[feature])
-
-        labelKey = 'label_' + feature
-        labelValue = [*le_name_mapping]
-        labelDict[labelKey] = labelValue
-
-    mental_health_train
-
-    x_train = mental_health_train.iloc[:, 0:12]
-    y_train = mental_health_train.iloc[:, 12:13]
-
-    algo = DecisionTreeClassifier(criterion="entropy", randon_state=0)
-    algo.fit(x_train, y_train)
-
-    yp = algo.predict(a.reshape(1, -1))
-    return yp
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from category_encoders import TargetEncoder
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
+import io
+d = pd.read_excel(io.BytesIO(uploaded['Schizophrenia final.xlsx']))
+d.head()
+d['result'].unique()
+d1 = d
+d1
+labelencoder = LabelEncoder()
+# Assigning numerical values and storing in another column
+d1['result'] = labelencoder.fit_transform(d1['result'])
+encoder = TargetEncoder()
+d1['control'] = encoder.fit_transform(d1['control'], d1['result'])
+encoder = TargetEncoder()
+d1['hear'] = encoder.fit_transform(d1['hear'], d1['result'])
+encoder = TargetEncoder()
+d1['difficult'] = encoder.fit_transform(d1['difficult'], d1['result'])
+encoder = TargetEncoder()
+d1['see'] = encoder.fit_transform(d1['see'], d1['result'])
+encoder = TargetEncoder()
+d1['struggle'] = encoder.fit_transform(d1['struggle'], d1['result'])
+encoder = TargetEncoder()
+d1['thinking'] = encoder.fit_transform(d1['thinking'], d1['result'])
+encoder = TargetEncoder()
+d1['tracked'] = encoder.fit_transform(d1['tracked'], d1['result'])
+encoder = TargetEncoder()
+d1['jealous'] = encoder.fit_transform(d1['jealous'], d1['result'])
+encoder = TargetEncoder()
+d1['person'] = encoder.fit_transform(d1['person'], d1['result'])
+encoder = TargetEncoder()
+d1['speaking'] = encoder.fit_transform(d1['speaking'], d1['result'])
+encoder = TargetEncoder()
+d1['medical'] = encoder.fit_transform(d1['medical'], d1['result'])
+d2 = d1
+d2
+x = d2.iloc[:, :-1].values
+y = d2.iloc[:, -1].values
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, test_size=0.25, random_state=0)
+# Decision Tree Classification
+classifier = DecisionTreeClassifier(criterion='entropy', random_state=0)
+classifier.fit(x_train, y_train)
+y3_pred = classifier.predict(x_test)
+accuracy_score(y_test, y3_pred)
