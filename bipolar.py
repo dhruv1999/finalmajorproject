@@ -7,7 +7,7 @@ import io
 from sklearn.preprocessing import LabelEncoder
 from category_encoders import TargetEncoder
 
-d = pd.read_csv("disease.csv")
+d = pd.read_csv("bipolardata.csv")
 d.head()
 d['disease'].unique()
 d1 = d.iloc[:, 1:]

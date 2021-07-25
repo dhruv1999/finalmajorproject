@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_restful import reqparse, abort, Api, Resource
 from flask import render_template
-from file2 import makePrediction
 from disease import makePrediction2
+
 import numpy as np
 
 app = Flask(__name__)
@@ -52,69 +52,6 @@ parser.add_argument('medical', type=str)
 
 
 @app.route('/survey', methods=['POST', 'GET'])
-def funcPost():
-    c = None
-    if request.method == 'POST':
-        try:
-            age = int(request.form['group0'])
-            age2 = age
-
-        except:
-            age = 1
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        sleep = dict1[request.form['group1']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        depressed = dict1[request.form['group2']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        reading = dict1[request.form['group3']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        academics = dict1[request.form['group4']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        pressure = dict1[request.form['group5']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        socialmedia = dict1[request.form['group6']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        annoyed = dict1[request.form['group7']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        afraid = dict1[request.form['group8']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        relaxing = dict1[request.form['group9']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        temper = dict1[request.form['group10']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        alone = dict1[request.form['group11']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        anxiety = dict1[request.form['group12']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        dead = dict1[request.form['group13']]
-
-        result = sleep + depressed + reading + academics + pressure + socialmedia + \
-            annoyed + afraid + relaxing + temper + alone + anxiety + dead
-
-        dict1 = {0: "Not at all", 1: "Moderately", 2: "Severely"}
-        if result <= 8:
-            result = 0
-        elif result >= 9 and result <= 15:
-            result = 1
-        else:
-            result = 2
-        return render_template('results.html', result=dict1[result])
-    return render_template('survey.html', result=c)
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -175,62 +112,6 @@ class diseaseprediction(Resource):
 
 
 @app.route('/diseasesurvey', methods=['POST', 'GET'])
-def funcPostdisease():
-    c = None
-    if request.method == 'POST':
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        talk = dict1[request.form['group1']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        active = dict1[request.form['group2']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        highlow = dict1[request.form['group3']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        selfconfidence = dict1[request.form['group4']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        work = dict1[request.form['group5']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        angry = dict1[request.form['group6']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        dull = dict1[request.form['group7']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        tearful = dict1[request.form['group8']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        distracted = dict1[request.form['group9']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        social = dict1[request.form['group10']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        hyper = dict1[request.form['group11']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        vomitting = dict1[request.form['group12']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        dead = dict1[request.form['group13']]
-
-        result = talk + active + highlow + selfconfidence + work + \
-            angry + dull + tearful + distracted + social + hyper + vomitting + dead
-
-        dict1 = {0: "No bipolar", 1: "bipolar"}
-        if result < 12:
-            result = 0
-
-        else:
-            result = 1
-        return render_template('diseaseresult.html', result=dict1[result])
-    return render_template('diseasesurvey.html', result=c)
-
-
 class schidiseaseprediction(Resource):
     def gets(self):
         args = parser.parse_args()
@@ -257,62 +138,6 @@ class schidiseaseprediction(Resource):
 
 
 @app.route('/schisurvey', methods=['POST', 'GET'])
-def schisurvey():
-    c = None
-    if request.method == 'POST':
-        try:
-            age = int(request.form['group0'])
-            age2 = age
-
-        except:
-            age = 1
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        think = dict1[request.form['group1']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        hear = dict1[request.form['group2']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        express = dict1[request.form['group3']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        see = dict1[request.form['group4']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        trust = dict1[request.form['group5']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        oraganize = dict1[request.form['group6']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        tracked = dict1[request.form['group7']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        jealous = dict1[request.form['group8']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        head = dict1[request.form['group9']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        speaking = dict1[request.form['group10']]
-
-        dict1 = {"Not at all": 0, "Moderately": 1, "Severely": 2}
-        medical = dict1[request.form['group11']]
-
-        result = think + head + express + see + trust + oraganize + \
-            tracked + jealous + head + speaking + medical
-
-        dict1 = {0: "No schizophrenia", 1: "schizophrenia"}
-        if result < 12:
-            result = 0
-
-        else:
-            result = 1
-        return render_template('schiresult.html', result=dict1[result])
-    return render_template('schisurvey.html', result=c)
-
-
 api.add_resource(HelloWorld, '/testing')
 
 
