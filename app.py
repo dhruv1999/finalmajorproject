@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_restful import reqparse, abort, Api, Resource
 from flask import render_template
-from disease import makePrediction2
+from biploar import makePredictionbipolar
+from disease import makePrediction
+from schi import makePredictionschi
 
 import numpy as np
 
@@ -57,7 +59,7 @@ def index():
     return render_template('index.html')
 
 
-class HelloWorld(Resource):
+class MentalStateCheck(Resource):
     def get(self):
         args = parser.parse_args()
         # un = str(args['username'])
@@ -104,7 +106,7 @@ class diseaseprediction(Resource):
         arr1 = [talk, active, highlow, selfconfidence, work,
                 angry, dull, tearfull, distracted, social, hyper]
         try:
-            c = makePrediction2(np.array(arr1, dtype='int'))
+            c = makePredictionbipolar(np.array(arr1, dtype='int'))
             c = str(c[0])
         except:
             c = "2"
@@ -130,7 +132,7 @@ class schidiseaseprediction(Resource):
         arr1 = [think, hear, express, see, trust,
                 organize, tracked, jealous, head, speaking, medical]
         try:
-            c = makePrediction2(np.array(arr1, dtype='int'))
+            c = makepredictionschi(np.array(arr1, dtype='int'))
             c = str(c[0])
         except:
             c = "2"

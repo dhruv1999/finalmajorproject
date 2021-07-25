@@ -5,7 +5,8 @@ from sklearn.model_selection import train_test_split
 from category_encoders import TargetEncoder
 import pandas as pd
 import io
-d = pd.read_excel(io.BytesIO(uploaded['major1500.xlsx']))
+d = pd.read_excel(io.BytesIO(uploaded['MentalStateCheck
+                                      .xlsx']))
 d.head()
 d['result'].unique()
 d1 = d.iloc[:, 1:]
@@ -49,10 +50,11 @@ x_train, x_test, y_train, y_test = train_test_split(
 # Decision Tree Classification
 classifier = DecisionTreeClassifier(
     criterion='entropy', random_state=0, max_depth=8)
-classifier.fit(x_train, y_train)
+disease = classifier.fit(x_train, y_train)
 y3_pred = classifier.predict(x_test)
 y8_pred = classifier.predict(x_train)
 accuracy_score(y_test, y3_pred)
 # accuracy_score(y_train,y8_pred)
 #precision_score(y_train, y8_pred,average='weighted',labels=np.unique(y_pred))
 #recall_score(y_train, y8_pred,average='weighted',labels=np.unique(y_pred))
+return disease

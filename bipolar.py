@@ -7,7 +7,7 @@ import io
 from sklearn.preprocessing import LabelEncoder
 from category_encoders import TargetEncoder
 
-d = pd.read_csv("bipolardata.csv")
+d = pd.read_csv("Bipolardata.csv")
 d.head()
 d['disease'].unique()
 d1 = d.iloc[:, 1:]
@@ -50,6 +50,7 @@ x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.25, random_state=0)
 start = time.time()
 classifier = DecisionTreeClassifier(criterion='entropy', random_state=0)
-classifier.fit(x_train, y_train)
+biploar = classifier.fit(x_train, y_train)
 end = time.time()
 print(end - start, "seconds")
+return bipolar

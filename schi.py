@@ -44,6 +44,7 @@ x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.25, random_state=0)
 # Decision Tree Classification
 classifier = DecisionTreeClassifier(criterion='entropy', random_state=0)
-classifier.fit(x_train, y_train)
+schi = classifier.fit(x_train, y_train)
 y3_pred = classifier.predict(x_test)
 accuracy_score(y_test, y3_pred)
+return schi
